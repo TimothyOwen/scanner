@@ -30,20 +30,25 @@ public class ScannerRunner {
 		case "C":
 			System.out.println("Name: ");
 			String Name = dashboard.next();
+			System.out.println("--------------------------------------------- |");
 			System.out.println("Age: ");
 			int Age = dashboard.nextInt();
+			System.out.println("--------------------------------------------- |");
 			System.out.println("Job Title: ");
 			String jobTitle = dashboard.next();
 			Person newPerson = new Person(Name, Age, jobTitle);
 			PersonList.add(newPerson);
+			System.out.println("--------------------------------------------- |");
+			System.out.println("Person added.");
+			System.out.println("--------------------------------------------- |");
 			System.out.println("Press r to navigate back to menu.");
 			reset = dashboard.next();
 			resetScanner(PersonList);
 			break;
 		case "O":
-			System.out.println("-----------------------");
+			System.out.println("--------------------------------------------- |");
 			PersonList.forEach(System.out::println);
-			System.out.println("-----------------------");
+			System.out.println("--------------------------------------------- |");
 			System.out.println("Press r to navigate back to menu.");
 			reset = dashboard.next();
 			resetScanner(PersonList);
@@ -53,8 +58,10 @@ public class ScannerRunner {
 			String Searchee = dashboard.next();
 			for(Object i: PersonList) {
 				if(i.toString().contains(Searchee)) {
+					System.out.println("--------------------------------------------- |");
 					System.out.println("We have found a record: ");
 					System.out.println(i);
+					System.out.println("--------------------------------------------- |");
 				}
 			}
 			System.out.println("Press r to navigate back to menu.");
@@ -72,6 +79,7 @@ public class ScannerRunner {
 		PersonList.add(Paul);
 		PersonList.add(Steve);
 		PersonList.add(Colin);
+		PersonList.add(Julian);
 		scannerRunner.personScanner(PersonList);
 	}
 }
